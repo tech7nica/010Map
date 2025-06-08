@@ -1,0 +1,33 @@
+{
+  "slug": "010Map",
+  "name": "010Map",
+  "version": "2.0.0",
+  "license": "MIT",
+  "brand": "010Software",
+  "author": "tech7nica",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "010Map",
+      "name": "010Map",
+      "description": "Module like Processing's map() function.",
+      "tags": [
+        "Utility"
+      ]
+    },
+    {
+      "slug": "010MapStereo",
+      "name": "010MapStereo",
+      "description": "Stereo Module like Processing's map() function.",
+      "tags": [
+        "Utility"
+      ]
+    }
+  ]
+}

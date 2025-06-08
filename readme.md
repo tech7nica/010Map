@@ -11,7 +11,7 @@ A module providing functionality similar to [Processing's map()](https://process
 * OUT RANGE MIN: Lower limit of conversion range
 * OUT RANGE MAX: Upper limit of conversion range
 
-## Licence
+## License
 
 This project is licensed under the MIT License, see the LICENSE.txt file for details.  
 (Distributed under the MIT License in accordance with the [VCV Rack Non-Commercial Plugin License Exception](https://github.com/VCVRack/Rack/blob/v1/LICENSE.md).)  

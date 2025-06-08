@@ -58,6 +58,7 @@ struct _010MapStereo : Module {
 	*/
 	float map(float value, float start1, float stop1, float start2, float stop2)
 	{
+		if (stop1 == start1) return 0.f; // 現在の範囲が0の場合は変換できないので0を返す
 		return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
 	}
 

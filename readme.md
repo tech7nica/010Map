@@ -13,6 +13,6 @@ A module providing functionality similar to [Processing's map()](https://process
 
 ## Licence
 
-This project is licensed under the MIT License, see the LICENSE.txt file for details.
-(Distributed under the MIT License in accordance with the [VCV Rack Non-Commercial Plugin License Exception](https://github.com/VCVRack/Rack/blob/v1/LICENSE.md).)
-The SVGs used (in res) are distributed under the Creative Commons CC-BY-NC-SA-4.0 and are copyright tech7nica.
+This project is licensed under the MIT License, see the LICENSE.txt file for details.  
+(Distributed under the MIT License in accordance with the [VCV Rack Non-Commercial Plugin License Exception](https://github.com/VCVRack/Rack/blob/v1/LICENSE.md).)  
+The SVGs used (in res) are distributed under the Creative Commons CC-BY-NC-SA-4.0 and are copyright tech7nica.  

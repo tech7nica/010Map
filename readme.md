@@ -11,6 +11,13 @@ A module providing functionality similar to [Processing's map()](https://process
 * OUT RANGE MIN: Lower limit of conversion range
 * OUT RANGE MAX: Upper limit of conversion range
 
+> [!WARNING]
+> Depending on the setting, it may output a large voltage. Please be careful when trying to output audio or when considering connecting the Rack to actual devices.
+
+## Disclaimer
+
+Please note that we are not responsible for any damages arising from the use of this software, source code, or resources.
+
 ## License
 
 This project is licensed under the MIT License, see the LICENSE.txt file for details.  

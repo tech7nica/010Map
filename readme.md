@@ -6,10 +6,10 @@ A module providing functionality similar to [Processing's map()](https://process
 
 ## Usage
 
-* IN RANGE MIN: Lower limit of input value range
-* IN RANGE MAX: Upper limit of input value range
-* OUT RANGE MIN: Lower limit of conversion range
-* OUT RANGE MAX: Upper limit of conversion range
+* IN RANGE(input value range) MIN: Lower limit of input value range
+* IN RANGE(input value range) MAX: Upper limit of input value range
+* OUT RANGE(output value range) MIN: Lower limit of conversion output value range
+* OUT RANGE(output value range) MAX: Upper limit of conversion output value range
 
 > [!WARNING]
 > Depending on the setting, it may output a large voltage. Please be careful when trying to output audio or when considering connecting the Rack to actual devices.

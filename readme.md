@@ -1,6 +1,6 @@
 # 010Map
 
-A module providing functionality similar to [Processing's map()](https://processing.org/reference/map_.html)  function.
+A module providing functionality similar to [Processing's map() function](https://processing.org/reference/map_.html) .
 
 ![alt text](img/readme_image.png)
 

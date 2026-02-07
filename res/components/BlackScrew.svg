@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="4mm"
-   height="4mm"
-   viewBox="0 0 4 4"
+   width="5.0799999mm"
+   height="5.0799999mm"
+   viewBox="0 0 5.0799999 5.0799999"
    version="1.1"
    id="svg6220"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="BlackScrew.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -28,10 +28,10 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="33.743993"
-     inkscape:cx="3.7488154"
-     inkscape:cy="7.0827422"
+     inkscape:cx="11.765057"
+     inkscape:cy="8.9645585"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="1129"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -114,7 +114,8 @@
        id="g13694"
        transform="matrix(-2.6892425,-0.72058037,0.72058037,-2.6892425,17.480916,22.957327)">
       <g
-         id="g957">
+         id="g957"
+         transform="matrix(1.1814496,0,0,1.1814496,-1.565623,-1.1953334)">
         <circle
            style="fill:url(#linearGradient324);fill-opacity:1;stroke-width:0.952759;paint-order:stroke fill markers"
            id="circle322"

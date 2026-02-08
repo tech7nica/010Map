@@ -31,8 +31,8 @@ struct _010Map : Module {
 
 	_010Map() {
 		config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
-		configParam(START1KNOB_PARAM, -10.f, 10.f, 0.f, "");
-		configParam(STOP1KNOB_PARAM, -10.f, 10.f, 0.f, "");
+		configParam(START1KNOB_PARAM, -10.f, 10.f, -10.f, "");
+		configParam(STOP1KNOB_PARAM, -10.f, 10.f, 10.f, "");
 		configParam(START2KNOB_PARAM, -10.f, 10.f, 0.f, "");
 		configParam(STOP2KNOB_PARAM, -10.f, 10.f, 0.f, "");
 		configInput(START1MODIN_INPUT, "start1");
@@ -55,8 +55,13 @@ struct _010Map : Module {
 	*/
 	float map(float value, float start1, float stop1, float start2, float stop2)
 	{
-		if (stop1 == start1) return 0.f; // 現在の範囲が0の場合は変換できないので0を返す
-		return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+		// 現在の範囲が0の場合は変換できないので0を返して終了
+		if (stop1 == start1) return 0.f;
+		// map関数の計算式
+		float out = start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+		// 無限大やNaNが出た場合は0を返す
+		if (!std::isfinite(out)) out = 0.f;
+		return out;
 	}
 
 	void process(const ProcessArgs& args) override {

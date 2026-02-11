@@ -7,7 +7,7 @@
    viewBox="0 0 8 8"
    version="1.1"
    id="svg6220"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    sodipodi:docname="GateJack.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -29,9 +29,9 @@
      showgrid="false"
      inkscape:zoom="11.930303"
      inkscape:cx="13.453137"
-     inkscape:cy="8.5496571"
+     inkscape:cy="8.5915672"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="1129"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -92,7 +92,7 @@
          r="3.4870019" />
     </g>
     <circle
-       style="fill:#3695ef;fill-opacity:1;stroke-width:4.8921;paint-order:stroke fill markers"
+       style="fill:#f8d100;fill-opacity:1;stroke-width:4.8921;paint-order:stroke fill markers"
        id="path6393"
        cx="3.9999998"
        cy="3.9999998"

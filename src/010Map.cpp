@@ -3,7 +3,7 @@
 
 #include "plugin.hpp"
 #include "components.hpp"
-
+#include <math.h>
 
 struct _010Map : Module {
 	enum ParamId {
@@ -66,39 +66,46 @@ struct _010Map : Module {
 
 	void process(const ProcessArgs& args) override {
 
-		// 入力信号を読む
-		float signalIn = inputs[LEFTIN_INPUT].getVoltage();
+		// ポリフォニック対応
+		int channels = std::max(inputs[LEFTIN_INPUT].getChannels(), 1);
 
-		// Start1ノブの値を読む（Mod入力がある場合そちらを優先する）
-		float start1Vol = params[START1KNOB_PARAM].getValue();
-		if (inputs[START1MODIN_INPUT].isConnected()){
-			start1Vol = inputs[START1MODIN_INPUT].getVoltage();
+		// チャンネル数分ループ
+		for (int c = 0; c < channels; c++) {
+
+			// 入力信号を読む
+			float signalIn = inputs[LEFTIN_INPUT].getPolyVoltage(c);
+
+			// Start1ノブの値を読む（Mod入力がある場合そちらを優先する）
+			float start1Vol = params[START1KNOB_PARAM].getValue();
+			if (inputs[START1MODIN_INPUT].isConnected()){
+				start1Vol = inputs[START1MODIN_INPUT].getPolyVoltage(c);
+			}
+
+			// Stop1ノブの値を読む（Mod入力がある場合そちらを優先する）
+			float stop1Vol = params[STOP1KNOB_PARAM].getValue();
+			if (inputs[STOP1MODIN_INPUT].isConnected()){
+				stop1Vol = inputs[STOP1MODIN_INPUT].getPolyVoltage(c);
+			}
+
+			// Start2ノブの値を読む（Mod入力がある場合そちらを優先する）
+			float start2Vol = params[START2KNOB_PARAM].getValue();
+			if (inputs[START2MODIN_INPUT].isConnected()){
+				start2Vol = inputs[START2MODIN_INPUT].getPolyVoltage(c);
+			}
+
+			// Stop2ノブの値を読む（Mod入力がある場合そちらを優先する）
+			float stop2Vol = params[STOP2KNOB_PARAM].getValue();
+			if (inputs[STOP2MODIN_INPUT].isConnected()){
+				stop2Vol = inputs[STOP2MODIN_INPUT].getPolyVoltage(c);
+			}
+
+			// Map関数の結果を出力変数に格納
+			float signalOut = map(signalIn, start1Vol, stop1Vol, start2Vol, stop2Vol);
+
+			// 出力変数の内容を出力する
+			outputs[LEFTOUT_OUTPUT].setVoltage(signalOut, c);
 		}
-
-		// Stop1ノブの値を読む（Mod入力がある場合そちらを優先する）
-		float stop1Vol = params[STOP1KNOB_PARAM].getValue();
-		if (inputs[STOP1MODIN_INPUT].isConnected()){
-			stop1Vol = inputs[STOP1MODIN_INPUT].getVoltage();
-		}
-
-		// Start2ノブの値を読む（Mod入力がある場合そちらを優先する）
-		float start2Vol = params[START2KNOB_PARAM].getValue();
-		if (inputs[START2MODIN_INPUT].isConnected()){
-			start2Vol = inputs[START2MODIN_INPUT].getVoltage();
-		}
-
-		// Stop2ノブの値を読む（Mod入力がある場合そちらを優先する）
-		float stop2Vol = params[STOP2KNOB_PARAM].getValue();
-		if (inputs[STOP2MODIN_INPUT].isConnected()){
-			stop2Vol = inputs[STOP2MODIN_INPUT].getVoltage();
-		}
-
-		// Map関数の結果を出力変数に格納
-		float signalOut = map(signalIn, start1Vol, stop1Vol, start2Vol, stop2Vol);
-
-		// 出力変数の内容を出力する
-		outputs[LEFTOUT_OUTPUT].setVoltage(signalOut);
-
+		outputs[LEFTOUT_OUTPUT].setChannels(channels);
 	}
 };
 
